@@ -43,6 +43,7 @@ jobs:
           reporter: github-pr-review
           level: info
           filter_mode: added
+          reviewdog_flags: "-tee"
           eslint_flags: "testdata/ --ignore-pattern /test-subproject/"
       - name: eslint-subproject-github-pr-review
         uses: ./
@@ -51,6 +52,7 @@ jobs:
           reporter: github-pr-review
           level: warning
           filter_mode: added
+          reviewdog_flags: "-tee"
           workdir: ./test-subproject
           eslint_flags: "sub-testdata/"
       - name: eslint-subproject
