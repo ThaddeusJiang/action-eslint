@@ -3,4 +3,4 @@ function test() {
   }
 }
 
-const
+const =
