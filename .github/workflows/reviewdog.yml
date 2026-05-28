@@ -41,12 +41,14 @@ jobs:
         with:
           tool_name: eslint-github-pr-review
           reporter: github-pr-review
+          filter_mode: added
           eslint_flags: "testdata/ --ignore-pattern /test-subproject/"
       - name: eslint-subproject-github-pr-review
         uses: ./
         with:
           tool_name: eslint-subproject-github-pr-review
           reporter: github-pr-review
+          filter_mode: added
           workdir: ./test-subproject
           eslint_flags: "sub-testdata/"
       - name: eslint-subproject
