@@ -78,6 +78,12 @@ Optional. Run eslint only on changed (and added) files, for speedup [`true`, `fa
 Will fetch the tip of the base branch with depth 1 from remote `origin` if it is not available.
 If you use different remote name or customize the checkout otherwise, make the tip of the base branch available before this action.
 
+Directory targets select changed `.js` files; use `--ext .js,.ts` to include other extensions.
+Explicit file targets and Git-style path globs are also supported. List brace alternatives separately.
+ESLint options such as `--ignore-pattern` are retained, and deleted files are excluded.
+Git fetch or diff failures fail the action instead of reporting an empty change set.
+Without PR base/head refs, the action uses the normal `eslint_flags` targets.
+
 ## Example usage
 
 You also need to install [eslint](https://github.com/eslint/eslint).
